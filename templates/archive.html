@@ -1,0 +1,38 @@
+
+<!DOCTYPE html>
+<html lang="ta">
+<head>
+  <meta charset="UTF-8">
+  <title>Archive - தமிழ் வேத வசனங்கள்</title>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Tamil&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>📚 Archive Page</h1>
+    <a href="/">🏠 Back to Home</a>
+    <table>
+      <thead>
+        <tr><th>வசனம்</th><th>சேர்க்கப்பட்ட நேரம்</th><th>மாற்றப்பட்ட நேரம்</th></tr>
+      </thead>
+      <tbody>
+        {% for row in verses %}
+        <tr>
+          <td contenteditable="true" onblur="saveInline(this, {{ loop.index0 }})">{{ row['Verse'] }}</td>
+          <td>{{ row['AddedTime'] }}</td>
+          <td>{{ row['ModifiedTime'] }}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+  <script>
+    function saveInline(el, index) {
+      const newVerse = el.innerText;
+      const formData = new FormData();
+      formData.append("verse", newVerse);
+      fetch(`/update/${index}`, { method: "POST", body: formData });
+    }
+  </script>
+</body>
+</html>

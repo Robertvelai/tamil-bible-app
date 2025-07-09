@@ -1,0 +1,39 @@
+
+<!DOCTYPE html>
+<html lang="ta">
+<head>
+  <meta charset="UTF-8">
+  <title>தமிழ் வேத வசனங்கள்</title>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Tamil&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/static/style.css">
+  <script src="/static/script.js" defer></script>
+</head>
+<body>
+  <div class="container">
+    <h1>📖 தமிழ் வேத வசனங்கள்</h1>
+
+    <div class="datetime" id="datetime"></div>
+
+    <label>⏰ நேர இடைவெளி (நிமிடங்கள்):</label>
+    <input type="range" id="timeInput" min="1" max="60" value="5" oninput="updateTimeLabel(this.value)">
+    <span id="timeLabel">5 நிமிடம்</span><br>
+    <button id="startBtn" onclick="startVerseRotation()">🔊 தொடங்கு</button>
+
+    <div class="verse-box">
+      <h2>📜 தற்போதைய வசனம்:</h2>
+      <p id="verseDisplay">இங்கே வசனம் தோன்றும்</p>
+    </div>
+
+    <div class="verse-form">
+      <h3>➕ புதிய வசனம் சேர்க்க</h3>
+      <input type="text" id="newVerse" placeholder="தமிழில் அல்லது ஆங்கிலத்தில் வசனம்..." class="tamil-input">
+      <button onclick="addVerse()">சேர்க்கவும்</button>
+      <button onclick="startDictation()">🎤</button>
+    </div>
+
+    <ul id="verseList" class="verse-list"></ul>
+
+    <a href="/archive" class="archive-link">📚 Archive Page</a>
+  </div>
+</body>
+</html>

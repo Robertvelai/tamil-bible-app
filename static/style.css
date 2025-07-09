@@ -1,0 +1,46 @@
+
+body {
+    font-family: 'Noto Sans Tamil', sans-serif;
+    background: #fdf6e3;
+    margin: 0;
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: auto;
+    background: white;
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+h1, h2, h3 {
+    text-align: center;
+    color: #1e40af;
+}
+
+input, button, textarea {
+    font-family: 'Noto Sans Tamil', sans-serif;
+}
+
+.archive-link {
+    display: block;
+    text-align: center;
+    margin-top: 20px;
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+}
+table, th, td {
+    border: 1px solid #ccc;
+}
+td, th {
+    padding: 10px;
+    text-align: left;
+}
